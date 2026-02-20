@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShapeCraft — Your AI Body Roadmap</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #6366f1;       /* indigo */
+      --primary-dark: #4f46e5;
+      --accent: #ec4899;         /* pink for chubby goal contrast */
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --bg-light: #f8fafc;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      scroll-behavior: smooth;
+    }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+    .carousel-item {
+      display: none;
+      background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    }
+    .carousel-item.active {
+      display: block;
+    }
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(15,23,42,0.45), rgba(15,23,42,0.75));
+    }
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="#" class="text-3xl font-playfair font-bold text-indigo-600 tracking-tight">ShapeCraft</a>
+        
+        <div class="hidden md:flex space-x-10 text-lg font-medium">
+          <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+          <a href="#how" class="text-gray-700 hover:text-indigo-600 transition">How It Works</a>
+          <a href="#goals" class="text-gray-700 hover:text-indigo-600 transition">Your Goals</a>
+          <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+          <a href="/login/" class="text-indigo-600 hover:text-indigo-800 font-medium">Login</a>
+          <a href="/register/" class="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md">Get Started</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="md:hidden text-2xl text-gray-700">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <div class="px-4 py-6 space-y-4 text-center">
+        <a href="#home" class="block text-lg text-gray-700 hover:text-indigo-600">Home</a>
+        <a href="#how" class="block text-lg text-gray-700 hover:text-indigo-600">How It Works</a>
+        <a href="#goals" class="block text-lg text-gray-700 hover:text-indigo-600">Your Goals</a>
+        <a href="#contact" class="block text-lg text-gray-700 hover:text-indigo-600">Contact</a>
+        <a href="/register/" class="block mt-4 bg-indigo-600 text-white py-3 rounded-full">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel – Image placeholders only -->
+  <section id="home" class="relative h-screen">
+    <div class="carousel w-full h-full">
+      <!-- Slide 1: Lean Goal – placeholder space -->
+      <div class="carousel-item active w-full h-full relative">
+        <div class="image-placeholder">Add your Lean Transformation Image Here (1920×1080 recommended)</div>
+        <div class="hero-overlay absolute inset-0 flex items-center justify-center">
+          <div class="text-center text-white px-6 max-w-4xl animate-fadeInUp">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-6 leading-tight">Become <span class="text-pink-400">Lean</span> & Defined</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">AI-crafted fat-loss roadmap • smart calorie deficit • sculpting workouts • visible results</p>
+            <a href="/register/" class="bg-white text-indigo-700 px-10 py-5 rounded-full text-xl font-semibold hover:bg-gray-100 transition shadow-xl">Get Started →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Chubby/Strong Goal – placeholder space -->
+      <div class="carousel-item w-full h-full relative">
+        <div class="image-placeholder">Add your Chubby/Strong Transformation Image Here (1920×1080 recommended)</div>
+        <div class="hero-overlay absolute inset-0 flex items-center justify-center">
+          <div class="text-center text-white px-6 max-w-4xl animate-fadeInUp">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-6 leading-tight">Become <span class="text-pink-400">Chubby</span> & Strong</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">Healthy surplus • glute & curve focus • strength training • confident full-body glow</p>
+            <a href="/register/" class="bg-white text-indigo-700 px-10 py-5 rounded-full text-xl font-semibold hover:bg-gray-100 transition shadow-xl">Get Started →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button id="prev-slide" class="absolute left-6 top-1/2 -translate-y-1/2 text-white text-5xl opacity-70 hover:opacity-100 transition"><i class="fas fa-chevron-left"></i></button>
+    <button id="next-slide" class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-5xl opacity-70 hover:opacity-100 transition"><i class="fas fa-chevron-right"></i></button>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-playfair mb-6">How ShapeCraft Works</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-16">Enter your details once → receive a completely personalized, science-backed AI roadmap tailored to your biology, lifestyle, and chosen goal.</p>
+
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="bg-gray-50 p-10 rounded-2xl shadow-lg hover:shadow-xl transition">
+          <div class="text-6xl mb-6 text-indigo-500"><i class="fas fa-calculator"></i></div>
+          <h3 class="text-2xl font-semibold mb-4">Smart Analysis</h3>
+          <p class="text-gray-600">BMI calculation + ideal range + metabolic insights based on your stats & goal direction.</p>
+        </div>
+        <div class="bg-gray-50 p-10 rounded-2xl shadow-lg hover:shadow-xl transition">
+          <div class="text-6xl mb-6 text-indigo-500"><i class="fas fa-brain"></i></div>
+          <h3 class="text-2xl font-semibold mb-4">AI Roadmap</h3>
+          <p class="text-gray-600">Personalized nutrition targets • progressive training plan • weekly progress strategy • realistic timeline.</p>
+        </div>
+        <div class="bg-gray-50 p-10 rounded-2xl shadow-lg hover:shadow-xl transition">
+          <div class="text-6xl mb-6 text-indigo-500"><i class="fas fa-trophy"></i></div>
+          <h3 class="text-2xl font-semibold mb-4">Goal-Specific Design</h3>
+          <p class="text-gray-600">Lean path: calorie deficit + full-body sculpting<br>Chubby path: clean surplus + strength + curve emphasis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-xl font-playfair text-white mb-4">ShapeCraft</p>
+      <p class="mb-6">Personalized • Science-driven • Your transformation starts here.</p>
+      <p>© 2026 ShapeCraft — Made with care in Kerala, India</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Carousel
+    const items = document.querySelectorAll('.carousel-item');
+    const prev = document.getElementById('prev-slide');
+    const next = document.getElementById('next-slide');
+    let index = 0;
+
+    function showSlide(i) {
+      items.forEach(el => el.classList.remove('active'));
+      items[i].classList.add('active');
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + items.length) % items.length;
+      showSlide(index);
+    });
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % items.length;
+      showSlide(index);
+    });
+
+    // Auto rotate
+    setInterval(() => {
+      index = (index + 1) % items.length;
+      showSlide(index);
+    }, 6000);
+  </script>
+
+</body>
+</html>
