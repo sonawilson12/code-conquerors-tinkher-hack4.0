@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShapeCraft — Personalized Body Transformation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --text: #1f2937;
+      --text-light: #4b5563;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav { display: flex; justify-content: space-between; align-items: center; }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -1px;
+    }
+
+    .hero {
+      padding: 60px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      padding: 48px 40px;
+      max-width: 540px;
+      margin: 20px auto;
+      border: 1px solid var(--border);
+    }
+
+    .form-card h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .form-group { margin-bottom: 1.8rem; }
+
+    label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .radio-group { display: flex; gap: 24px; margin-top: 0.8rem; }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+    }
+
+    .radio-group input { width: auto; }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 1.5rem;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    }
+
+    .features { padding: 100px 0; background: white; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    footer {
+      padding: 60px 0 40px;
+      text-align: center;
+      color: #6b7280;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">ShapeCraft</div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="form-card">
+        <h2>Start Your Transformation</h2>
+        
+        <form id="transformationForm">
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label><input type="radio" name="gender" value="Male" checked> Male</label>
+              <label><input type="radio" name="gender" value="Female"> Female</label>
+              <label><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="18" max="80" placeholder="25" required>
+          </div>
+
+          <div class="form-group">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" name="height" step="0.1" placeholder="170" required>
+          </div>
+
+          <div class="form-group">
+            <label for="weight">Current Weight (kg)</label>
+            <input type="number" id="weight" name="weight" step="0.1" placeholder="68" required>
+          </div>
+
+          <div class="form-group">
+            <label for="goal">Your Goal</label>
+            <select id="goal" name="goal" required>
+              <option value="" disabled selected>Select your primary goal</option>
+              <option value="weight_gain">Become Chubby (Weight Gain)</option>
+              <option value="weight_loss">Become Lean (Weight Loss)</option>
+            </select>
+          </div>
+
+          <button type="button" onclick="getRoadmap()">Generate My AI Roadmap →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 style="text-align:center; font-size:2.8rem; margin-bottom:1rem;">What You Get</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div style="font-size:3rem">📏</div>
+          <h3>Accurate BMI + Analysis</h3>
+          <p>Instant BMI calculation tailored to your goal.</p>
+        </div>
+        <div class="feature">
+          <div style="font-size:3rem">🧠</div>
+          <h3>AI-Powered Custom Roadmap</h3>
+          <p>Nutrition macros and training splits.</p>
+        </div>
+        <div class="feature">
+          <div style="font-size:3rem">⚡</div>
+          <h3>Goal-Specific Guidance</h3>
+          <p>Specific paths for Lean or Chubby body types.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 ShapeCraft — Personalized Health Guidance.</p>
+      <p style="margin-top:8px;">Built with care in Kerala, India</p>
+    </div>
+  </footer>
+
+  <script>
+    async function getRoadmap() {
+        // Collect data
+        const genderElement = document.querySelector('input[name="gender"]:checked');
+        const age = document.getElementById('age').value;
+        const height = document.getElementById('height').value;
+        const weight = document.getElementById('weight').value;
+        const goal = document.getElementById('goal').value;
+
+        // Basic validation
+        if (!age || !height || !weight || !goal) {
+            alert("Please fill in all fields");
+            return;
+        }
+
+        const userData = {
+            gender: genderElement ? genderElement.value : "Other",
+            age: age,
+            height: height,
+            weight: weight,
+            goal: goal
+        };
+
+        try {
+            const response = await fetch('/api/roadmap/', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}' // Needed for Django POST requests
+                },
+                body: JSON.stringify(userData)
+            });
+
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const result = await response.json();
+            
+            // Display result
+            alert("Daily Calories: " + result.calories + "\nAdvice: " + result.advice);
+        } catch (error) {
+            console.error('Error:', error);
+            alert("Failed to connect to the backend. Ensure your Django server is running.");
+        }
+    }
+  </script>
+
+</body>
+</html>

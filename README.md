@@ -6,7 +6,7 @@
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [Code conguerors]
 
 ### Team Members
 - Member 1: [Anjana M H] - [ICCS College of Engineering and Managment]
@@ -16,13 +16,13 @@
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[ShapeCraft is an AI-driven health platform that generates personalized body transformation roadmaps by analyzing user metrics such as age, gender, height, and weight. The platform provides goal-specific nutrition and training strategies, specialized for those seeking either healthy weight gain ("chubby and strong") or fat loss and definition ("lean and defined")]
 
 ### The Problem statement
-[What problem are you solving?]
+[Many fitness seekers struggle with generic, "one-size-fits-all" plans that fail to provide specific caloric targets or food charts based on unique body metrics. Additionally, developers often find it difficult to bridge the gap between user-friendly web interfaces and high-quality, verified health data without building massive databases from scratch.]
 
 ### The Solution
-[How are you solving it?]
+[We are solving this by integrating a Free Health/Nutrition API into our Django-based web application. This integration allows the frontend to collect user data and instantly fetch scientifically verified calculations and dietary guidelines from a third-party expert database. By connecting this external API, ShapeCraft delivers real-time, personalized roadmaps that calculate BMI, daily calorie requirements, and customized food charts tailored to each user's specific transformation goal.]
 
 ---
 
@@ -31,10 +31,10 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [HTML,CSS, Python, Java]
+- Frameworks used: [ Django]
+- Libraries used: []
+- Tools used: [ VS Code, Git, ]
 
 **For Hardware:**
 - Main components: [List main components]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShapeCraft - Your Roadmap</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f4f7f6; padding: 50px; }
+        .result-card { background: white; max-width: 600px; margin: 0 auto; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .stat-item { background: #f8faff; padding: 15px; border-radius: 10px; text-align: center; }
+        h1 { color: #6366f1; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="result-card">
+        <h1>Transformation Roadmap</h1>
+        <div class="stat-grid">
+            <div class="stat-item">
+                <small>DAILY CALORIES</small>
+                <h2>{{ calories }} kcal</h2>
+            </div>
+            <div class="stat-item">
+                <small>CURRENT BMI</small>
+                <h2>{{ bmi }}</h2>
+            </div>
+        </div>
+        <h3>Expert Advice</h3>
+        <p>{{ advice }}</p>
+        <a href="{% url 'home' %}" style="display:block; text-align:center; margin-top:20px;">Calculate Again</a>
+    </div>
+</body>
+</html>
